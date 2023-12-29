@@ -1,69 +1,51 @@
 package com.tutorial;
 
-class Mahasiswa{
-    // Data Member
+
+class Hero{
     String nama;
-    String nim;
-    String prodi;
-    
-    // konstruktor
-    Mahasiswa(String nama, String nim, String prodi){
-        this.nama = nama;
-        this.nim = nim;
-        this.prodi = prodi;
+
+    public void display(){
+        System.out.println("nama hero : " + nama);
     }
+}
 
-    // method tanpa return dan tanpa parameter
-    void show(){
-        System.out.println("Nama : " + this.nama);
-        System.out.println("NIM : " + this.nim);
-        System.out.println("Prodi : " + this.prodi);
+    //sub class hero tank
+class HeroTank extends Hero{
+        String healt;
+        String nama;
+
+
+    public void display(){
+        System.out.println("nama hero : " + nama);
+        System.out.println("Healt : " + healt);
     }
+}
 
-    // method tanpa return dengan parameter
-    void setNama(String nama, String nim, String prodi) {
-        this.nama = nama;
-        this.nim = nim;
-        this.prodi = prodi;
+class HeroMarksman extends Hero{
+        String attackspeed;
+        String nama;
+
+        public void display (){
+            System.out.println("nama hero 2 : " + nama);
+            System.out.println("attackspeed : " + attackspeed);
+        
     }
-
-    // method tanpa parameter dengan return
-    String getNama(){
-        return this.nama;
-    } 
-
-    String getNIM(){
-        return this.nim;
-    }
-
-    // method dengan parameter dengan return
-    String sayHi(String pesan) {
-        return pesan + " aku " + this.nama + " Mahasiswa PTI";
-    }
-
-
-
-
-     
 }
 
 public class Main {
-
+    
     public static void main(String[] args) {
-        // membuat objek baru atau instansiasi
-        Mahasiswa mhs1 = new Mahasiswa("coco", "12345678", "PTI");
-        
-        // memanggil method
-        mhs1.show();
-        mhs1.setNama("bima", "222427328", "lautan");
-        mhs1.show();
-     
-        System.out.println(mhs1.getNama());
-        System.out.println(mhs1.getNIM());
 
-        String pesan = mhs1.sayHi("Hallo");
-        System.out.println(pesan);
+     HeroTank heroTank = new HeroTank();
+     heroTank.nama = "saitama";
+     heroTank.healt= "20";
+     heroTank.display();
 
-
+     HeroMarksman heroMarksman = new HeroMarksman();
+     heroMarksman.nama = "pablito";
+     heroMarksman.attackspeed = "100";
+     heroMarksman.display();
     }
 }
+
+
